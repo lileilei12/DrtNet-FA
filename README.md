@@ -25,3 +25,15 @@ Additionally, you need to create two text files to specify the data files:
 2. **Testing File**: Named `test_vol.txt`
 
 These text files should list the corresponding `.npz` data file names. Please ensure that there are no leading or trailing empty lines in the text files.
+
+## Model Overview
+
+This model is based on the corresponding code of TransUNet. We utilized its training files, testing files, and other auxiliary files, making specific modifications to the input and output ports.
+
+In terms of the model architecture:
+- The original Transformer components have been retained.
+- The input and output ports of the Transformer have been optimized.
+- The entire CNN structure has been completely reconstructed.
+- All pre-trained components from the original model have been removed.
+
+These changes enhance the model's performance and adaptability for our specific tasks.
