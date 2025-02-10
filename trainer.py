@@ -100,18 +100,4 @@ def trainer_synapse(args, model, snapshot_path):
 
     writer.close()
 
-    sample_interval = 100  
-    sampled_total_loss_list = total_loss_list[::sample_interval]
-    sampled_loss_ce_list = loss_ce_list[::sample_interval]
-    sampled_iterations = range(0, len(total_loss_list), sample_interval)
-
-    plt.figure()
-    plt.plot(sampled_iterations, sampled_total_loss_list, label='Total Loss')
-    plt.plot(sampled_iterations, sampled_loss_ce_list, label='Cross Entropy Loss')
-    plt.xlabel('Iteration')
-    plt.ylabel('Loss')
-    plt.legend()
-    plt.title('Training Loss')
-    plt.savefig(os.path.join(snapshot_path, 'loss_plot.png'))
-
     return "Finished!"
